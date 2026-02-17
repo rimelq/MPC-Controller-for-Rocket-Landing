@@ -1,11 +1,11 @@
-# MPC Controller for Rocket Landing (ME-425 Mini-Project 2025)
+# MPC Controller for Rocket Landing
 
 Model Predictive Control strategies for a 12-state nonlinear rocket model: linear MPC regulators/tracking controllers, cascaded PID–MPC position tracking, offset-free tracking for mass mismatch, robust Tube MPC for safe landing in the z-axis, and full Nonlinear MPC (NMPC) using CasADi.
 
 **Course:** ME-425 Model Predictive Control (EPFL)  
-**Project:** Mini-Project 2025 — Rocket Landing  
-**Group AL:** Yasmine Tligui, Rim El Qabli, Ismail Filali  
-**Report:** `report_group_AL.pdf`
+**Project:** Rocket Landing  
+**Group AL:** Rim El Qabli, Yasmine Tligui, Ismail Filali  
+**Report:** `report.pdf`
 
 ---
 
@@ -107,27 +107,3 @@ Includes explicit constraints:
 - Offset-free tracking eliminates steady-state error for **constant** mass mismatch; time-varying mass yields residual drift and possible saturation.
 - Tube MPC robustly maintains **z ≥ 0** under bounded disturbances and enables safe landing behavior.
 - NMPC captures coupling and achieves fast landing but can show stronger transient gimbal activity compared to merged linear controllers.
-
----
-
-## How to Run
-
-> Update this section to match your codebase.
-
-Typical workflow:
-1. Run trimming + linearization
-2. Run linear MPC regulation/tracking tests
-3. Run cascaded PID–MPC position tracking
-4. Run nonlinear simulation
-5. Run offset-free tracking scenarios
-6. Run Tube MPC (z) tests and merged landing controller
-7. Run NMPC landing (CasADi)
-
-Example (replace with your actual scripts):
-```bash
-python main_linear_mpc.py
-python main_pid_mpc_tracking.py
-python main_offset_free_z.py
-python main_tube_mpc_z.py
-python main_landing_merged.py
-python main_nmpc_landing.py
